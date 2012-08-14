@@ -1,17 +1,21 @@
 # -*- encoding: utf-8 -*-
-plist = File.expand_path('../../Terminal Notifiers/notify/Terminal Notifier/Terminal Notifier-Info.plist', __FILE__)
-version = `/usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' '#{plist}'`.strip
+# plist = File.expand_path('../../Terminal Notifiers/notify/Terminal Notifier/Terminal Notifier-Info.plist', __FILE__)
+# version = `/usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' '#{plist}'`.strip
+require File.expand_path('../lib/terminal_notifier/guard/version', __FILE__)
 
 Gem::Specification.new do |gem|
   gem.name             = "terminal-notifier-guard"
-  gem.version          = version
+  gem.version          = TerminalNotifier::Guard::VERSION
   gem.summary          = 'Send User Notifications on Mac OS X 10.8 - with status icons.'
   gem.authors          = ["Eloy Duran", "Wouter de Vos"]
   gem.email            = ["wouter.de.vos@springest.com"]
   gem.homepage         = 'https://github.com/foxycoder/terminal-notifier'
 
   gem.executables      = ['terminal-notifier-notify', 'terminal-notifier-success', 'terminal-notifier-failed', 'terminal-notifier-pending']
-  gem.files            = ['lib/terminal-notifier-guard.rb'] + Dir.glob('lib/terminal_notifier/**/*') + Dir.glob('bin/terminal-notifier-*') + Dir.glob('vendor/terminal-notifier*')
+  gem.files            = ['lib/terminal-notifier-guard.rb'] +
+                          Dir.glob('vendor/terminal-notifier*/**/*') +
+                          Dir.glob('lib/terminal_notifier/guard/*') +
+                          Dir.glob('bin/terminal-notifier-*')
   gem.require_paths    = ['lib']
 
   gem.extra_rdoc_files = ['README.markdown']

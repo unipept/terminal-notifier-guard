@@ -1,9 +1,10 @@
-%w(failed notify pending success).each do |type|
+%w(version failed notify pending success).each do |type|
   require File.expand_path("../terminal_notifier/guard/#{type}", __FILE__)
 end
 
 module TerminalNotifier
   module Guard
+    include TerminalNotifier::Guard::Version
     include TerminalNotifier::Guard::Notify
     include TerminalNotifier::Guard::Success
     include TerminalNotifier::Guard::Failed
