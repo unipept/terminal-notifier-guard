@@ -11,7 +11,7 @@ Gem::Specification.new do |gem|
   gem.homepage         = 'https://github.com/foxycoder/terminal-notifier'
 
   gem.executables      = ['terminal-notifier-notify', 'terminal-notifier-success', 'terminal-notifier-failed', 'terminal-notifier-pending']
-  gem.files            = ['lib/terminal-notifier-guard.rb'] + Dir.glob('lib/terminal_notifier/**/*') + Dir.glob('bin/terminal-notifier-*') + Dir.glob('vendor/terminal-notifier/**/*')
+  gem.files            = ['lib/terminal-notifier-guard.rb'] + Dir.glob('lib/terminal_notifier/**/*') + Dir.glob('bin/terminal-notifier-*') + Dir.glob('vendor/terminal-notifier*')
   gem.require_paths    = ['lib']
 
   gem.extra_rdoc_files = ['README.markdown']
