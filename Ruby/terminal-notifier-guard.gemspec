@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 plist = File.expand_path('../../Terminal Notifiers/notify/Terminal Notifier/Terminal Notifier-Info.plist', __FILE__)
-version = `/usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' '#{plist}'`.strip
+version = '1.5.0'
 
 Gem::Specification.new do |gem|
   gem.name             = "terminal-notifier-guard"
